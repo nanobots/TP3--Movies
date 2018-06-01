@@ -21,28 +21,36 @@
         return registros;
     }
 
-    void cargarBinario(eMovie *movie, int tammovie){
-        FILE *archivo;
+    void cargarBinario(eMovie* movie, int tammovie){
+        FILE* archivo;
         archivo=fopen("peliculas.dat", "rb");
         if(archivo==NULL){
             HardCodeMovie(movie, tammovie);
             archivo=fopen("peliculas.dat", "rb");
             if(archivo==NULL){
-                printf("\n\tERROR - No archivo peliculas.dat no existe\n");
-            }else{
-                fread(movie,sizeof(movie),6,archivo);
-                fclose(archivo);
+                printf("\n\tERROR - Archivo peliculas.dat no se puede cargar\n");
             }
         }
+        fread(movie, sizeof(eMovie), 3, archivo);
+        fclose(archivo);
     }
 
     int contareBinario(eMovie* movies, int tammovie){
-        int i;
-        int cantMovie;
-        for(i=0; i<tammovie; i++){
-            cantMovie+=1;
+        eMovie letra;
+        int leidos=0;
+        FILE* archivo;
+        archivo = fopen("peliculas.dat","rb");
+        if(archivo==NULL){
+            printf("error, no se puede abrir fichero");
+        }else{
+             while(!feof(archivo)&&letra.estado!=0){
+                fread(&letra, sizeof(letra), 1, archivo);
+                if(feof(archivo)){break;};
+                leidos+=1;
+            }
+            printf("contareBinario%d\n",leidos);
         }
-        return cantMovie;
+        return leidos;
      }
 
 
@@ -161,9 +169,9 @@
     void mostrarListaMovie(eMovie* movie, int tammovie) {
 
        int i;
-        FILE* archivo;
-        archivo = fopen("peliculas.dat","rb");
-        fread(movie, sizeof(eMovie), 3, archivo);
+ //       FILE* archivo;
+ //       archivo = fopen("peliculas.dat","rb");
+ //       fread(movie, sizeof(eMovie), 3, archivo);
 
         for(i=0; i<tammovie; i++){
             if((movie+i)->estado == 1){

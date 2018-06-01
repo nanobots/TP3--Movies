@@ -6,7 +6,7 @@
 
 1527309967 c:\nanobots\peliculas\menu.h
 
-1527828122 source:c:\nanobots\peliculas\menu.c
+1527834813 source:c:\nanobots\peliculas\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
@@ -15,7 +15,7 @@
 
 1527828107 c:\nanobots\peliculas\lib.h
 
-1527830763 source:c:\nanobots\peliculas\lib.c
+1527836438 source:c:\nanobots\peliculas\lib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

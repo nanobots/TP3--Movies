@@ -37,6 +37,8 @@
             switch( opcion ) {
                 case  1 :
                     cargarBinario(movie, tammovies);
+                    contareBinario(movie, tammovies);
+//                    mostrarListaMovie(movie, tammovies);
                     id=movieLibre(movie,tammovies);
                     if(id!=-1){
                         altaMovie(movie, tammovies, id);
@@ -73,6 +75,7 @@
   //                      system("pause");
  //                   }
  //                   opcion=-1;
+ exit(-1);
                     break;
                 case 7 :
  //                   mostrarListaAutos(autos, tamautos);
